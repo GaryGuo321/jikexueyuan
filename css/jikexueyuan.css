@@ -1323,6 +1323,10 @@ button {
     background: url(../image/gotop_d19051b.jpg) no-repeat;
     background-size: 34px 103px;
     opacity: 0;
+    cursor: default;
+}
+.container .filter .back-top-cursor{
+    cursor: pointer;
 }
 
 .download-app {

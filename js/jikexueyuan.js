@@ -1,3 +1,4 @@
+// js模块化设置
 require.config({
 	paths: {
 		"jquery": "jquery.min"
@@ -169,7 +170,7 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 		$sFrame.mouseover(function() {
 			indexFrame = $sFrame.index(this);
 			$(".img-blove").eq(indexFrame).fadeIn();
-			$(".img-blove").unbind("mouseover").bind("mouseover",function() {
+			$(".img-blove").unbind("mouseover").bind("mouseover", function() {
 				$(this).stop().fadeIn("fast");
 				$frameWork.eq(indexFrame).stop().animate({
 					height: "160px"
@@ -276,14 +277,14 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 		});
 		$(window).scroll(function() {
 			var scrollHeight = $(window).scrollTop(); //鼠标滑动距离顶部的高度
-			if (scrollHeight >= 500) {
+			if (scrollHeight >= 350) {
 				$(".back-top").stop().animate({
 					opacity: "1"
-				}, "normal");
+				}, "fast").addClass("back-top-cursor");
 			} else {
 				$(".back-top").stop().animate({
 					opacity: "0"
-				}, "normal");
+				}, "fast").removeClass("back-top-cursor");
 			};
 		});
 		$(".back-top").click(function() {
