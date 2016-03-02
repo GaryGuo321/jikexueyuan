@@ -11,6 +11,7 @@ b,
 input,
 button,
 h2,
+img,
 h5 {
     margin: 0;
     padding: 0;
@@ -39,6 +40,9 @@ ul {
 button {
     border: 0;
     background-color: #fff;
+}
+img{
+    border:none;
 }
 
 .container {
@@ -318,7 +322,7 @@ button {
     /*border-right: 1px solid #e4e4e4;*/
     /*border-bottom: 1px solid #e4e4e4;*/
     position: relative;
-    border-top: 2px solid #35b558;
+    border-top: 1px solid #35b558;
     z-index: 600;
 }
 
@@ -339,6 +343,9 @@ button {
     border-bottom: 1px solid #f5f5f5;
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
+}
+.nav-title .nav-one{
+    border-top: 1px solid #35b558;
 }
 
 .nav-title i {
@@ -379,12 +386,12 @@ button {
 
 .nav-title li div {
     position: absolute;
-    min-height: 407px;
+    min-height: 408px;
     border-right: 1px solid #e4e4e4;
     border-top: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;
     width: 400px;
-    top: 0;
+    top: -1px;
     left: 210px;
     padding: 10px;
     color: #808080;
@@ -438,6 +445,14 @@ button {
     color: #35b558;
     border-right: 0px;
 }
+.content-nav .nav-title .nav-a-hover {
+    border-left: 2px solid #35b558;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    color: #35b558;
+    border-right: 0px;
+}
+
 
 .banner-content {
     float: right;
@@ -919,25 +934,26 @@ button {
     width: 1000px;
     height: 481px;
     margin-bottom: 40px;
+    overflow: hidden;
+    border:1px solid #e4e4e4;
 }
-
 .know-content-frame {
     width: 1002px;
-    height: 481px;
+    height: 480px;
 }
 
 .know-frame {
     width: 167px;
     height: 120px;
-    border: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
     float: left;
     position: relative;
 }
-
 .front,
 .back {
-    width: 165px;
-    height: 118px;
+    width: 166px;
+    height: 119px;
     -webkit-backface-visibility: hidden;
     /*设置背面不可见*/
     -webkit-transition: .6s;
@@ -951,7 +967,6 @@ button {
     left: 0;
     top: 0;
 }
-
 .front {
     padding: 15px 0;
     z-index: 2;
@@ -1003,8 +1018,8 @@ button {
     -ms-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     background-color: #f5f5f5;
-    width: 165px;
-    height: 118px;
+    width: 166px;
+    height: 119px;
     cursor: pointer;
     text-align: center;
 }
@@ -1034,6 +1049,7 @@ button {
     background: #35b558;
 }
 
+
 .content-five {
     width: 1000px;
     margin-bottom: 40px;
@@ -1042,10 +1058,14 @@ button {
 .strategy,
 .media {
     border: 1px solid #E4E4E4;
-    height: 90px;
+    height: 92px;
     padding: 20px;
     position: relative;
     width: 1000px;
+    overflow: hidden;
+}
+.strategy-box,.media-box{
+    overflow: hidden;
 }
 
 .left-arrow3,
@@ -1062,23 +1082,26 @@ button {
     background: url(../image/banner-left_fe0df34.png) no-repeat -11px -5px;
     left: 0;
     top: 50%;
-    margin-top: -24px;
+    margin-top: -25px;
 }
 
 .right-arrow3 {
     background: url(../image/banner-right_a0bdd7d.png) no-repeat -10px -5px;
     right: 0;
     top: 50%;
-    margin-top: -24px;
+    margin-top: -25px;
 }
-
 #marquee,
 #marquee1 {
-    width: 100%;
+    width: 201%;
     height: 50px;
     overflow: hidden;
 }
-
+#marquee ul{
+    width: 201%;
+    height: 50px;
+    overflow: hidden;
+}
 #marquee ul li,
 #marquee1 ul li {
     width: 160px;
@@ -1086,7 +1109,6 @@ button {
     display: inline-block;
     float: left;
 }
-
 #marquee ul li a,
 #marquee1 ul li a {
     display: inline-block;
@@ -1094,12 +1116,12 @@ button {
     height: 50px;
     border: 1px solid #e4e4e4;
 }
-
 #marquee a img,
 #marquee1 a img {
     width: 148px;
     height: 48px;
 }
+
 
 .content-six {
     width: 1000px;
@@ -1323,10 +1345,6 @@ button {
     background: url(../image/gotop_d19051b.jpg) no-repeat;
     background-size: 34px 103px;
     opacity: 0;
-    cursor: default;
-}
-.container .filter .back-top-cursor{
-    cursor: pointer;
 }
 
 .download-app {
@@ -1341,6 +1359,9 @@ button {
 
 .kefu-conmunicate {
     background: url(../image/kfu1_3dd1509.png) no-repeat center center;
+}
+.explain{
+    display: none;
 }
 
 @-webkit-keyframes go {

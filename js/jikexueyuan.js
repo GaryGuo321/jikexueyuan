@@ -1,4 +1,3 @@
-// js模块化设置
 require.config({
 	paths: {
 		"jquery": "jquery.min"
@@ -45,11 +44,11 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 			$(".arrow").addClass("arrow-back");
 		});
 		//////导航栏效果
-		$contentNav = $(".content-nav"); //all导航栏
-		$upDown = $(".down"); //向下标志
-		$mainNav = $(".main-nav"); //导航栏细分的a
-		$mainNavI = $(".main-nav i"); //a导航标题的右箭头
-		$navTitleDiv = $(".nav-title li div");
+		var $contentNav = $(".content-nav"); //all导航栏
+		var $upDown = $(".down"); //向下标志
+		var $mainNav = $(".main-nav"); //导航栏细分的a
+		var $mainNavI = $(".main-nav i"); //a导航标题的右箭头
+		var $navTitleDiv = $(".nav-title li div");
 		$("");
 		$("");
 		$contentNav.mouseover(function() {
@@ -72,12 +71,12 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 			$(this).hide();
 		});
 		//////banner效果
-		$bannerSpan = $(".banner-prompt span"); //span提示
-		$bannerImgDiv = $(".banner-img div"); //图片
-		$bannerBig = $(".banner")
-		$leftArrow = $(".left-arrow");
-		$rightArrow = $(".right-arrow");
-		$twoArrow = $(".banner-arrow");
+		var $bannerSpan = $(".banner-prompt span"); //span提示
+		var $bannerImgDiv = $(".banner-img div"); //图片
+		var $bannerBig = $(".banner")
+		var $leftArrow = $(".left-arrow");
+		var $rightArrow = $(".right-arrow");
+		var $twoArrow = $(".banner-arrow");
 		$bannerSpan.eq(0).addClass("prompt-span");
 		$bannerImgDiv.eq(0).show(); //默认显示第一张图和第一个span提示
 		///banner点击span提示效果,且切换banner图片
@@ -183,7 +182,6 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 					height: "100px"
 				}, "normal");
 				$frameWorkP.eq(indexFrame).stop().slideUp();
-
 			}); //当mouse加载新界面时及时stop原先动画可以避免重复执行
 		});
 		//////实战路径图js效果
@@ -228,47 +226,97 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 			}, "normal");
 		});
 		//////相关轮播
+		var $goR = $("#goR");
+		var $goL = $("#goL");
 		$(".strategy").mouseover(function() {
 			if (!$(this).is(":animated")) {
-				$("#goL").fadeIn();
-				$("#goR").fadeIn();
+				$goL.fadeIn();
+				$goR.fadeIn();
 			}
 		}).mouseleave(function() {
 			if (!$(this).is(":animated")) {
-				$("#goL").fadeOut();
-				$("#goR").fadeOut();
+				$goL.fadeOut();
+				$goR.fadeOut();
 			}
 		});
-		$("#marquee").kxbdSuperMarquee({
-			isMarquee: true,
-			isEqual: false,
-			scrollDelay: 20,
-			direction: "left",
-			controlBtn: {
-				left: "#goR",
-				right: "#goL"
-			}
+		var $marquee = $("#marquee");
+		var $marqueeLi = $("#marquee ul li");
+		var $marqueeUl = $("#marquee ul");
+
+		var allIndex = $marqueeUl.children().length - 1;
+		var nums = 0;
+		$goR.click(function() {
+			$marqueeUl.animate({
+				'margin-left': -$marqueeLi.width()
+			}, 300, function() {
+				$marqueeUl.append($marqueeLi.eq(nums));
+				$marqueeUl.css("margin-left", 0);
+				if (nums < allIndex) {
+					nums++;
+				} else {
+					nums = 0;
+				}
+			});
 		});
+		$goL.click(function() {
+			if (nums <= 0) {
+				nums = allIndex + nums;
+			} else {
+				nums = nums - 1;
+			}
+			$marqueeUl.stop().prepend($marqueeLi.eq(nums));
+			$marqueeUl.css("margin-left", -$marqueeLi.width());
+			$marqueeUl.animate({
+				'margin-left': 0
+			}, 300);
+		});
+		var $goRR = $("#goRR");
+		var $goLL = $("#goLL");
 		$(".media").mouseover(function() {
 			if (!$(this).is(":animated")) {
-				$("#goLL").fadeIn();
-				$("#goRR").fadeIn();
+				$goLL.fadeIn();
+				$goRR.fadeIn();
 			}
 		}).mouseleave(function() {
 			if (!$(this).is(":animated")) {
-				$("#goLL").fadeOut();
-				$("#goRR").fadeOut();
+				$goLL.fadeOut();
+				$goRR.fadeOut();
 			}
 		});
-		$('#marquee1').kxbdSuperMarquee({
-			distance: 160,
-			btnGo: {
-				left: '#goRR',
-				right: '#goLL'
-			},
-			direction: 'left',
-			time: 3
+
+		var $marquee1 = $("#marquee1");
+		var $marquee1Li = $("#marquee1 ul li");
+		var $marquee1Ul = $("#marquee1 ul");
+
+		var allIndex1 = $marquee1Ul.children().length - 1;
+		var nums1 = 0;
+		$goRR.click(function() {
+			$marquee1Ul.animate({
+				'margin-left': -$marquee1Li.width()
+			}, 300, function() {
+				$marquee1Ul.append($marquee1Li.eq(nums1));
+				$marquee1Ul.css("margin-left", 0);
+				if (nums1 < allIndex1) {
+					nums1++;
+				} else {
+					nums1 = 0;
+				}
+			});
 		});
+		$goLL.click(function() {
+			if (nums1 <= 0) {
+				nums1 = allIndex1 + nums1;
+			} else {
+				nums1 = nums1 - 1;
+			}
+			$marquee1Ul.stop().prepend($marquee1Li.eq(nums1));
+			$marquee1Ul.css("margin-left", -$marquee1Li.width());
+			$marquee1Ul.animate({
+				'margin-left': 0
+			}, 300);
+		});
+
+
 		///////footer
 		$(".wechat").mouseover(function() {
 			$(".wechat img").show();
@@ -277,14 +325,14 @@ require(['jquery', 'kxbdSuperMarquee'], function($, kxbdSuperMarquee) {　　　
 		});
 		$(window).scroll(function() {
 			var scrollHeight = $(window).scrollTop(); //鼠标滑动距离顶部的高度
-			if (scrollHeight >= 350) {
+			if (scrollHeight >= 500) {
 				$(".back-top").stop().animate({
 					opacity: "1"
-				}, "fast").addClass("back-top-cursor");
+				}, "normal");
 			} else {
 				$(".back-top").stop().animate({
 					opacity: "0"
-				}, "fast").removeClass("back-top-cursor");
+				}, "normal");
 			};
 		});
 		$(".back-top").click(function() {
