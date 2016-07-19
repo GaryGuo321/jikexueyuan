@@ -41,8 +41,9 @@ button {
     border: 0;
     background-color: #fff;
 }
-img{
-    border:none;
+
+img {
+    border: none;
 }
 
 .container {
@@ -126,7 +127,11 @@ img{
     vertical-align: top;
 }
 
+
+/*查找课程按钮*/
+
 .submit {
+    float: right;
     vertical-align: top;
     border: 0;
     height: 36px;
@@ -135,6 +140,10 @@ img{
     border-left: 1px solid #e4e4e4;
     background: #fff url(../image/topsearch-icon_e1f5df2.png) no-repeat 9px 9px;
     outline: none;
+}
+
+.submit-focus {
+    background: #35b558 url(../image/topsearch-icon2_8c8d8b0.png) no-repeat 9px 9px;
 }
 
 .nav-title ul {
@@ -344,7 +353,8 @@ img{
     border-left: 1px solid #e4e4e4;
     border-right: 1px solid #e4e4e4;
 }
-.nav-title .nav-one{
+
+.nav-title .nav-one {
     border-top: 1px solid #35b558;
 }
 
@@ -357,6 +367,10 @@ img{
     margin-right: 15px;
     background: url(../image/more-icon_d39346f.png) no-repeat;
     background-size: contain;
+}
+
+.nav-title div li a:hover {
+    color: #35b558;
 }
 
 .down {
@@ -445,6 +459,7 @@ img{
     color: #35b558;
     border-right: 0px;
 }
+
 .content-nav .nav-title .nav-a-hover {
     border-left: 2px solid #35b558;
     border-top: 1px solid #e4e4e4;
@@ -452,7 +467,6 @@ img{
     color: #35b558;
     border-right: 0px;
 }
-
 
 .banner-content {
     float: right;
@@ -691,6 +705,7 @@ img{
     width: 235px;
     float: left;
     position: relative;
+    cursor: pointer;
 }
 
 .sec-frame .s-frame-four,
@@ -794,6 +809,9 @@ img{
     margin-top: 11px;
 }
 
+
+/*实战路径图*/
+
 .content-third {
     width: 1000px;
     height: 380px;
@@ -847,10 +865,6 @@ img{
     text-align: center;
 }
 
-.content-third .real-path .ahover-green {
-    border: 1px solid #35b558;
-}
-
 .real-path img {
     margin-top: 25px;
 }
@@ -889,7 +903,13 @@ img{
     border: 1px solid #e4e4e4;
 }
 
-.content-third .real-path .button-hover {
+.real-path .path-all:hover,
+.real-path .path-all:active {
+    border: 1px solid #35b558;
+}
+
+.path-all:hover button,
+.path-all:active button {
     color: #fff;
     background-color: #35b558;
     transition: 0.5s;
@@ -899,7 +919,8 @@ img{
     -o-transition: 0.5s;
 }
 
-.content-third .real-path .button-special {
+.real-path .path-unity3d:hover button,
+.real-path .path-unity3d:active button {
     background-color: #e4e4e4;
     transition: 0.5s;
     -webkit-transition: 0.5s;
@@ -935,8 +956,9 @@ img{
     height: 481px;
     margin-bottom: 40px;
     overflow: hidden;
-    border:1px solid #e4e4e4;
+    border: 1px solid #e4e4e4;
 }
+
 .know-content-frame {
     width: 1002px;
     height: 480px;
@@ -950,6 +972,7 @@ img{
     float: left;
     position: relative;
 }
+
 .front,
 .back {
     width: 166px;
@@ -967,6 +990,7 @@ img{
     left: 0;
     top: 0;
 }
+
 .front {
     padding: 15px 0;
     z-index: 2;
@@ -1049,7 +1073,6 @@ img{
     background: #35b558;
 }
 
-
 .content-five {
     width: 1000px;
     margin-bottom: 40px;
@@ -1064,7 +1087,9 @@ img{
     width: 1000px;
     overflow: hidden;
 }
-.strategy-box,.media-box{
+
+.strategy-box,
+.media-box {
     overflow: hidden;
 }
 
@@ -1091,17 +1116,20 @@ img{
     top: 50%;
     margin-top: -25px;
 }
+
 #marquee,
 #marquee1 {
     width: 201%;
     height: 50px;
     overflow: hidden;
 }
-#marquee ul{
+
+#marquee ul {
     width: 201%;
     height: 50px;
     overflow: hidden;
 }
+
 #marquee ul li,
 #marquee1 ul li {
     width: 160px;
@@ -1109,6 +1137,7 @@ img{
     display: inline-block;
     float: left;
 }
+
 #marquee ul li a,
 #marquee1 ul li a {
     display: inline-block;
@@ -1116,12 +1145,12 @@ img{
     height: 50px;
     border: 1px solid #e4e4e4;
 }
+
 #marquee a img,
 #marquee1 a img {
     width: 148px;
     height: 48px;
 }
-
 
 .content-six {
     width: 1000px;
@@ -1360,7 +1389,8 @@ img{
 .kefu-conmunicate {
     background: url(../image/kfu1_3dd1509.png) no-repeat center center;
 }
-.explain{
+
+.explain {
     display: none;
 }
 
