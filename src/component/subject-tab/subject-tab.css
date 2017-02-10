@@ -86,6 +86,10 @@
     cursor: pointer;
 }
 
+.frame-image img{
+    display: block;
+}
+
 .img-blove
 {
     position: absolute;

@@ -1,6 +1,6 @@
 # jikexueyuan  
 
-demo链接：[点击这里]()  
+demo链接：[点击这里](http://garyguo321.github.io/jikexueyuan/dist/)  
 
 安装node依赖：
 ```

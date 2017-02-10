@@ -176,7 +176,7 @@ require(['jquery', 'emitter', 'lifeCycle', 'combatPath', 'knowledgeSystem', 'par
 			}
 		});
 		$(".back-top").click(function() {
-			$("body").animate({
+			$("body, html").animate({
 				scrollTop: 0
 			}, 300);
 			return false;

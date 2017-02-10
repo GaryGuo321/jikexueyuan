@@ -2,7 +2,6 @@
 // require文件合并
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var browerSync = require('browser-sync').create();
 var reload = browerSync.reload;
@@ -138,7 +137,6 @@ gulp.task('build:componentCSS', function() {
 		.pipe(gulp.dest('src/component'))
 });
 
-
 // js
 gulp.task('build:js', function() {
 	return gulp.src('./src/**/*.js')
@@ -171,32 +169,6 @@ gulp.task('build:js', function() {
 		.pipe(gulp.dest('src/js'))
 });
 
-gulp.task('replaceHTML', function() {
-	gulp.src(['src/**/rev-manifest.json', 'dist/index.html'])
-		.pipe(revCollector())
-		.pipe(gulp.dest('dist'))
-});
-
-gulp.task('replaceCSS', function() {
-	gulp.src(['src/image/rev-manifest.json', 'dist/**/*.css'])
-		.pipe(revCollector())
-		.pipe(gulp.dest('dist'))
-});
-
-gulp.task('replaceJSON', function() {
-	gulp.src(['src/**/rev-manifest.json', 'dist/data/*.json'])
-		.pipe(revCollector())
-		.pipe(gulp.dest('dist/data'))
-});
-
-gulp.task('replaceJS', function() {
-	gulp.src(['src/component/rev-manifest.json', 'dist/js/*.js'])
-		.pipe(revCollector())
-		.pipe(gulp.dest('dist/js'))
-});
-
-
-
 // 图片
 gulp.task('build:img', function() {
 	return gulp.src('./src/**/*.{png,jpg,gif,ico}')
@@ -224,6 +196,33 @@ gulp.task('build:data', function() {
 	return gulp.src('./src/**/*.json')
 		.pipe(gulp.dest('dist'))
 });
+
+
+// md5替换
+gulp.task('replaceHTML', function() {
+	gulp.src(['src/**/rev-manifest.json', 'dist/index.html'])
+		.pipe(revCollector())
+		.pipe(gulp.dest('dist'))
+});
+
+gulp.task('replaceCSS', function() {
+	gulp.src(['src/image/rev-manifest.json', 'dist/**/*.css'])
+		.pipe(revCollector())
+		.pipe(gulp.dest('dist'))
+});
+
+gulp.task('replaceJSON', function() {
+	gulp.src(['src/**/rev-manifest.json', 'dist/data/*.json'])
+		.pipe(revCollector())
+		.pipe(gulp.dest('dist/data'))
+});
+
+gulp.task('replaceJS', function() {
+	gulp.src(['src/component/rev-manifest.json', 'dist/js/*.js'])
+		.pipe(revCollector())
+		.pipe(gulp.dest('dist/js'))
+});
+
 
 // 清理
 gulp.task('clean', function() {
