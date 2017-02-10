@@ -1,20 +1,41 @@
-# jikexueyuan
-模拟极客学院首页做的页面，使用了jQuery和js模块化。<br>
-<br>
-change first:<br>
-<br>
-1. 修改增加了部分注释<br>
-<br>
-<br>
-change second:<br>
-<br>
-1. 修改侧导航栏底部绿色border的问题。<br>
-2. 修改了知识体系图border网格问题。<br>
-3. 自己写了一个战略合作伙伴和媒体报道的轮播代码，放弃了之前使用的插件<br>
-<br>
-<br>
-change third: #2016/7/19<br>
-<br>
-1. 把面向过程的js代码修改成面向对象，使用原型模式<br>
-2. 组件化<br>
-<br>
+# jikexueyuan  
+
+demo链接：[点击这里]()  
+
+安装node依赖：
+```
+npm install
+```
+
+启动项目(开发环境)：
+```
+npm start 或 gulp server
+```
+
+启动项目(dist环境)：
+```
+npm test
+```
+
+构建项目：
+```
+npm build 或 gulp
+```
+
+1. 组件化
+    + 侧边导航栏组件化
+    + 首屏轮播图组件化
+    + 课程Tab组件化
+    + 实战路径图组件化
+    + 知识体系图组件化
+    + 战略合作伙伴和媒体报道组件化
+
+2. 模块化
+    + requirejs
+
+3. 模版引擎
+    + ejs
+
+3. 面向对象
+  
+4. 工程化(gulp)  
